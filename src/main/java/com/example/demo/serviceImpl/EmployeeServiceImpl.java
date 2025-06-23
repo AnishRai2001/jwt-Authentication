@@ -32,6 +32,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 		  String Password= BCrypt.hashpw(employee.getPassword(), BCrypt.gensalt());
 		   employee.setPassword(Password);
 		    
+		   if (employee.getRole() == null || employee.getRole().isEmpty()) {
+		        employee.setRole("ROLE_USER");
+		    }
+		 //  employee.setRole("ROLE_USER");
 		    //employee.setPassword(passwordEncoder.encode(employee.getPassword()));
 
 
